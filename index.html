@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business AI Questionnaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 id="typewriter" data-text="Business AI Questionnaire"></h1>
+            <p class="fade-in">Powered by NextGen AI - Efficient, Accurate, Reliable.</p>
+        </header>
+
+        <form id="discovery-form">
+            <!-- Section 1 - Business Information -->
+            <div class="category contact-info fade-in">
+                <h2>Section 1 – Business Information</h2>
+                <div class="contact-grid">
+                    <div class="question-item">
+                        <label for="contact-name">Name *</label>
+                        <input type="text" id="contact-name" name="contact_name" required placeholder="Your full name">
+                    </div>
+                    
+                    <div class="question-item">
+                        <label for="contact-company">Business Name *</label>
+                        <input type="text" id="contact-company" name="contact_company" required placeholder="Your business name">
+                    </div>
+                    
+                    <div class="question-item">
+                        <label for="contact-title">Role/Title *</label>
+                        <input type="text" id="contact-title" name="contact_title" required placeholder="e.g., CEO, Manager, Director">
+                    </div>
+                    
+                    <div class="question-item">
+                        <label for="contact-email">Email *</label>
+                        <input type="email" id="contact-email" name="contact_email" required placeholder="your.email@company.com">
+                    </div>
+                    
+                    <div class="question-item">
+                        <label for="industry">Industry (choose one) *</label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select your industry</option>
+                            <option value="Technology / Software">Technology / Software</option>
+                            <option value="Marketing / Advertising">Marketing / Advertising</option>
+                            <option value="Professional Services">Professional Services (consulting, legal, finance, etc.)</option>
+                            <option value="Healthcare / Life Sciences">Healthcare / Life Sciences</option>
+                            <option value="Education / Training">Education / Training</option>
+                            <option value="Manufacturing / Construction / Trades">Manufacturing / Construction / Trades</option>
+                            <option value="Retail / E-commerce">Retail / E-commerce</option>
+                            <option value="Nonprofit / Government">Nonprofit / Government</option>
+                            <option value="Other">Other (please specify)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="question-item" id="industry-other-container" style="display: none;">
+                        <label for="industry-other">Please specify your industry</label>
+                        <input type="text" id="industry-other" name="industry_other" placeholder="Please specify your industry">
+                    </div>
+                    
+                    <div class="question-item">
+                        <label for="company-size">Company Size (employees) *</label>
+                        <select id="company-size" name="company_size" required>
+                            <option value="">Select company size</option>
+                            <option value="1-5">1–5</option>
+                            <option value="6-10">6–10</option>
+                            <option value="11-50">11–50</option>
+                            <option value="51-200">51–200</option>
+                            <option value="201+">201+</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2 - AI Usage & Outlook -->
+            <div class="category ai-usage fade-in">
+                <h2>Section 2 – AI Usage & Outlook</h2>
+                
+                <div class="question-item">
+                    <label>Do you currently use AI in your business? *</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="current_ai_use" value="Yes" required>
+                            <span class="radio-custom"></span>
+                            Yes
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="current_ai_use" value="No" required>
+                            <span class="radio-custom"></span>
+                            No
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="question-item" id="ai-usage-details" style="display: none;">
+                    <label for="ai-usage-how">If yes, how do you use it today? (short answer)</label>
+                    <textarea id="ai-usage-how" name="ai_usage_details" rows="3" placeholder="Describe how you currently use AI in your business..."></textarea>
+                </div>
+                
+                <div class="question-item">
+                    <label>How important is AI adoption for your business growth? *</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="ai_importance" value="1" required>
+                            <span class="radio-custom"></span>
+                            1 – Not important
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_importance" value="2" required>
+                            <span class="radio-custom"></span>
+                            2 – Slightly important
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_importance" value="3" required>
+                            <span class="radio-custom"></span>
+                            3 – Moderately important
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_importance" value="4" required>
+                            <span class="radio-custom"></span>
+                            4 – Important
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_importance" value="5" required>
+                            <span class="radio-custom"></span>
+                            5 – Critical
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="question-item">
+                    <label>How optimistic are you about AI shaping your business in the next few years? *</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="ai_optimism" value="Very optimistic" required>
+                            <span class="radio-custom"></span>
+                            Very optimistic
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_optimism" value="Optimistic" required>
+                            <span class="radio-custom"></span>
+                            Optimistic
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_optimism" value="Neutral" required>
+                            <span class="radio-custom"></span>
+                            Neutral
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_optimism" value="Skeptical" required>
+                            <span class="radio-custom"></span>
+                            Skeptical
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="question-item">
+                    <label>What do you see as your biggest barrier to adopting AI? (check all that apply)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_barriers" value="Cost">
+                            <span class="checkbox-custom"></span>
+                            Cost
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_barriers" value="Lack of knowledge/training">
+                            <span class="checkbox-custom"></span>
+                            Lack of knowledge/training
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_barriers" value="Trust/privacy concerns">
+                            <span class="checkbox-custom"></span>
+                            Trust/privacy concerns
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_barriers" value="Not sure where to start">
+                            <span class="checkbox-custom"></span>
+                            Not sure where to start
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_barriers" value="Time/resources to implement">
+                            <span class="checkbox-custom"></span>
+                            Time/resources to implement
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_barriers" value="Other">
+                            <span class="checkbox-custom"></span>
+                            Other
+                        </label>
+                    </div>
+                    <div class="question-item" id="ai-barriers-other" style="display: none; margin-top: 10px;">
+                        <input type="text" name="ai_barriers_other" placeholder="Please specify other barriers (you may list more than one)...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 - Current Software & Tools -->
+            <div class="category software-tools fade-in">
+                <h2>Section 3 – Current Software & Tools</h2>
+                
+                <div class="question-item">
+                    <label>General Software (check all that apply):</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="general_software" value="Google (Docs, Sheets, Meets)">
+                            <span class="checkbox-custom"></span>
+                            Google (Docs, Sheets, Meets)
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="general_software" value="Microsoft (Word, Excel, Teams)">
+                            <span class="checkbox-custom"></span>
+                            Microsoft (Word, Excel, Teams)
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="general_software" value="Zoom">
+                            <span class="checkbox-custom"></span>
+                            Zoom
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="general_software" value="Slack">
+                            <span class="checkbox-custom"></span>
+                            Slack
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="general_software" value="Notion">
+                            <span class="checkbox-custom"></span>
+                            Notion
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="general_software" value="Airtable">
+                            <span class="checkbox-custom"></span>
+                            Airtable
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="general_software" value="Other">
+                            <span class="checkbox-custom"></span>
+                            Other
+                        </label>
+                    </div>
+                    <div class="question-item" id="general-software-other" style="display: none; margin-top: 10px;">
+                        <input type="text" name="general_software_other" placeholder="Please specify other general software (you may list more than one)...">
+                    </div>
+                </div>
+                
+                <div class="question-item">
+                    <label>AI Systems (check all that apply):</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_systems" value="OpenAI (ChatGPT)">
+                            <span class="checkbox-custom"></span>
+                            OpenAI (ChatGPT)
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_systems" value="Google Gemini">
+                            <span class="checkbox-custom"></span>
+                            Google Gemini
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_systems" value="Anthropic Claude">
+                            <span class="checkbox-custom"></span>
+                            Anthropic Claude
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="ai_systems" value="Other">
+                            <span class="checkbox-custom"></span>
+                            Other
+                        </label>
+                    </div>
+                    <div class="question-item" id="ai-systems-other" style="display: none; margin-top: 10px;">
+                        <input type="text" name="ai_systems_other" placeholder="Please specify other AI systems (you may list more than one)...">
+                    </div>
+                </div>
+                
+                <div class="question-item">
+                    <label>CRM Automation:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="crm_automation" value="Salesforce">
+                            <span class="checkbox-custom"></span>
+                            Salesforce
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="crm_automation" value="HubSpot">
+                            <span class="checkbox-custom"></span>
+                            HubSpot
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="crm_automation" value="Zoho">
+                            <span class="checkbox-custom"></span>
+                            Zoho
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="crm_automation" value="Other">
+                            <span class="checkbox-custom"></span>
+                            Other
+                        </label>
+                    </div>
+                    <div class="question-item" id="crm-automation-other" style="display: none; margin-top: 10px;">
+                        <input type="text" name="crm_automation_other" placeholder="Please specify other CRM tools (you may list more than one)...">
+                    </div>
+                </div>
+                
+                <div class="question-item">
+                    <label>Finance Automation:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="finance_automation" value="QuickBooks">
+                            <span class="checkbox-custom"></span>
+                            QuickBooks
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="finance_automation" value="Xero">
+                            <span class="checkbox-custom"></span>
+                            Xero
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="finance_automation" value="FreshBooks">
+                            <span class="checkbox-custom"></span>
+                            FreshBooks
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="finance_automation" value="Wave">
+                            <span class="checkbox-custom"></span>
+                            Wave
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="finance_automation" value="Other">
+                            <span class="checkbox-custom"></span>
+                            Other
+                        </label>
+                    </div>
+                    <div class="question-item" id="finance-automation-other" style="display: none; margin-top: 10px;">
+                        <input type="text" name="finance_automation_other" placeholder="Please specify other finance tools (you may list more than one)...">
+                    </div>
+                </div>
+                
+                <div class="question-item">
+                    <label>Marketing & Content Tools:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="marketing_tools" value="Mailchimp">
+                            <span class="checkbox-custom"></span>
+                            Mailchimp
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="marketing_tools" value="Constant Contact">
+                            <span class="checkbox-custom"></span>
+                            Constant Contact
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="marketing_tools" value="Canva">
+                            <span class="checkbox-custom"></span>
+                            Canva
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="marketing_tools" value="Other">
+                            <span class="checkbox-custom"></span>
+                            Other
+                        </label>
+                    </div>
+                    <div class="question-item" id="marketing-tools-other" style="display: none; margin-top: 10px;">
+                        <input type="text" name="marketing_tools_other" placeholder="Please specify other marketing tools (you may list more than one)...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optional: AI Training Value -->
+            <div class="category ai-training fade-in">
+                <h2>Optional: AI Training Value</h2>
+                
+                <div class="question-item">
+                    <label>Would an AI training workshop be valuable to your team? (1–3 AI experts come in, review your current tools like ChatGPT, Veo 3, and operations software, and optimize how your team uses them.)</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="ai_training_value" value="Yes, very valuable">
+                            <span class="radio-custom"></span>
+                            Yes, very valuable
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_training_value" value="Somewhat valuable">
+                            <span class="radio-custom"></span>
+                            Somewhat valuable
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_training_value" value="Not valuable">
+                            <span class="radio-custom"></span>
+                            Not valuable
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="ai_training_value" value="Not sure">
+                            <span class="radio-custom"></span>
+                            Not sure
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="question-item" id="ai-training-specify" style="display: none;">
+                    <label for="ai-training-tools">If yes or somewhat valuable, please specify which AI/software you'd want training to optimize:</label>
+                    <textarea id="ai-training-tools" name="ai_training_tools" rows="3" placeholder="Specify which AI/software tools you'd like training for..."></textarea>
+                </div>
+            </div>
+
+            <!-- Section 4 - Future & Opportunities -->
+            <div class="category future-opportunities fade-in">
+                <h2>Section 4 – Future & Opportunities</h2>
+                
+                <div class="question-item">
+                    <label for="magic-wand">If you could wave a magic wand, what is the #1 task you would want automated in your business? *<br><small>Ex: scheduling, reporting, marketing, data entry, CRM, finance tool</small></label>
+                    <textarea id="magic-wand" name="automation_wish" rows="3" required placeholder="Describe the #1 task you'd want automated..."></textarea>
+                </div>
+                
+                <div class="question-item">
+                    <label>Would you be interested in third-party AI work or collaboration? *</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="collaboration_interest" value="Yes, please contact me" required>
+                            <span class="radio-custom"></span>
+                            Yes, please contact me
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="collaboration_interest" value="No" required>
+                            <span class="radio-custom"></span>
+                            No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="collaboration_interest" value="Maybe, send me more info" required>
+                            <span class="radio-custom"></span>
+                            Maybe, send me more info
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="question-item" id="collaboration-areas" style="display: none;">
+                    <label>If yes or maybe, what areas would you be most interested in? (Choose all that apply)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="collaboration_areas" value="Consulting">
+                            <span class="checkbox-custom"></span>
+                            Consulting
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="collaboration_areas" value="Education">
+                            <span class="checkbox-custom"></span>
+                            Education
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="collaboration_areas" value="Tailored Product Builds and Implementation">
+                            <span class="checkbox-custom"></span>
+                            Tailored Product Builds and Implementation
+                        </label>
+                    </div>
+                    <div class="collaboration-note" style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; font-size: 0.9em; color: #666;">
+                        <strong>Note:</strong> If you select "Yes" or "Maybe," you'll receive a follow-up email with our business overview and the possibility of setting up a meeting to explore next steps.
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-container fade-in">
+                <button type="submit" id="submit-btn">Submit Answers</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Handle industry "Other" option
+            const industrySelect = document.getElementById('industry');
+            const industryOtherContainer = document.getElementById('industry-other-container');
+            
+            industrySelect.addEventListener('change', () => {
+                if (industrySelect.value === 'Other') {
+                    industryOtherContainer.style.display = 'block';
+                    document.getElementById('industry-other').required = true;
+                } else {
+                    industryOtherContainer.style.display = 'none';
+                    document.getElementById('industry-other').required = false;
+                }
+            });
+
+            // Handle AI usage details
+            const aiUsageRadios = document.querySelectorAll('input[name="current_ai_use"]');
+            const aiUsageDetails = document.getElementById('ai-usage-details');
+            
+            aiUsageRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (radio.value === 'Yes') {
+                        aiUsageDetails.style.display = 'block';
+                    } else {
+                        aiUsageDetails.style.display = 'none';
+                    }
+                });
+            });
+
+            // Handle AI training specification
+            const aiTrainingRadios = document.querySelectorAll('input[name="ai_training_value"]');
+            const aiTrainingSpecify = document.getElementById('ai-training-specify');
+            
+            aiTrainingRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (radio.value === 'Yes, very valuable' || radio.value === 'Somewhat valuable') {
+                        aiTrainingSpecify.style.display = 'block';
+                    } else {
+                        aiTrainingSpecify.style.display = 'none';
+                    }
+                });
+            });
+
+            // Handle collaboration areas
+            const collaborationRadios = document.querySelectorAll('input[name="collaboration_interest"]');
+            const collaborationAreas = document.getElementById('collaboration-areas');
+            
+            collaborationRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (radio.value === 'Yes, please contact me' || radio.value === 'Maybe, send me more info') {
+                        collaborationAreas.style.display = 'block';
+                    } else {
+                        collaborationAreas.style.display = 'none';
+                    }
+                });
+            });
+
+            // Handle "Other" checkboxes for various sections
+            const handleOtherCheckbox = (checkboxName, containerId) => {
+                const checkboxes = document.querySelectorAll(`input[name="${checkboxName}"]`);
+                const otherContainer = document.getElementById(containerId);
+                
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', () => {
+                        if (checkbox.value === 'Other' && checkbox.checked) {
+                            otherContainer.style.display = 'block';
+                        } else if (checkbox.value === 'Other' && !checkbox.checked) {
+                            otherContainer.style.display = 'none';
+                        }
+                    });
+                });
+            };
+
+            // Apply "Other" handling to all relevant sections
+            handleOtherCheckbox('ai_barriers', 'ai-barriers-other');
+            handleOtherCheckbox('general_software', 'general-software-other');
+            handleOtherCheckbox('ai_systems', 'ai-systems-other');
+            handleOtherCheckbox('crm_automation', 'crm-automation-other');
+            handleOtherCheckbox('finance_automation', 'finance-automation-other');
+            handleOtherCheckbox('marketing_tools', 'marketing-tools-other');
+
+            // Handle form submission
+            const form = document.getElementById('discovery-form');
+            const webhookUrl = CONFIG.webhookUrl;
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                
+                const submitBtn = document.getElementById('submit-btn');
+                submitBtn.textContent = 'Submitting...';
+                submitBtn.disabled = true;
+
+                // Collect form data including checkboxes
+                const formData = new FormData(form);
+                const data = {};
+                
+                // Handle regular form fields
+                for (let [key, value] of formData.entries()) {
+                    if (data[key]) {
+                        // Convert to array if multiple values
+                        if (Array.isArray(data[key])) {
+                            data[key].push(value);
+                        } else {
+                            data[key] = [data[key], value];
+                        }
+                    } else {
+                        data[key] = value;
+                    }
+                }
+
+                // Handle checkbox groups specifically
+                const checkboxGroups = ['ai_barriers', 'general_software', 'ai_systems', 'crm_automation', 'finance_automation', 'marketing_tools', 'collaboration_areas'];
+                checkboxGroups.forEach(groupName => {
+                    const checkedBoxes = document.querySelectorAll(`input[name="${groupName}"]:checked`);
+                    if (checkedBoxes.length > 0) {
+                        data[groupName] = Array.from(checkedBoxes).map(cb => cb.value);
+                    }
+                });
+                
+                try {
+                    const response = await fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Server responded with status: ${response.status}`);
+                    }
+
+                    // Redirect to thank you page after successful submission
+                    window.location.href = 'thank-you.html';
+
+                } catch (error) {
+                    submitBtn.textContent = 'Submission Failed';
+                    submitBtn.style.backgroundColor = '#e74c3c';
+                    console.error('Error submitting form to webhook:', error);
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = 'Submit Answers';
+                        submitBtn.disabled = false;
+                        submitBtn.style.backgroundColor = '';
+                    }, 3000);
+                }
+            });
+        });
+    </script>
+    <script src="background.js"></script>
+    <script src="fancy-animations.js"></script>
+
+</body>
+</html> 
